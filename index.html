@@ -19,7 +19,8 @@
   <!-- store is an alias for the StoreController-->
   <div ng-repeat="product in store.products">
     <h1>{{product.name}}</h1>
-    <h2>{{product.price | currency}}</h2>
+    <em class="pull-right">{{product.price | currency}}</em>
+    <img ng-src="{{product.images[0].full}}"/>
     <p>{{product.description}}</p>
     <button ng-show="{{product.canPurchase}}">Add to Cart</button>
   </div>

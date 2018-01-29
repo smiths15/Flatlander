@@ -12,6 +12,11 @@
       price: 2.95,
       description: '...',
       canPurchase: true,
+      images: [
+        {
+          full: 'images/gem1.gif',
+        }
+      ]
     },
 
     {
@@ -19,6 +24,11 @@
       price: 5.95,
       description: '...',
       canPurchase: true,
+      images: [
+        {
+          full: 'images/gem2.gif'
+        }
+      ]
     },
 
   ];
