@@ -34,28 +34,28 @@
         </li>
       </ul>
     <!--Tabs -->
-      <section ng-init="tab = 1">
+      <section ng-controller="PanelController as panel">
         <ul class="nav nav-pills mb-4 mt-4">
-          <li class="nav-item " ng-class="{active:tab === 1}"> 
-            <a  class="nav-link active" href ng-click="tab = 1">Description</a> 
+          <li class="nav-item " ng-class="{ active: panel.isSelected(1)}"> 
+            <a  class="nav-link active" href ng-click="panel.selectTab(1)">Description</a> 
           </li>
-          <li class="nav-item ml-2 mr-2" ng-class="{ active:tab === 2}"> 
-            <a class="nav-link active" href ng-click="tab = 2">Specifications</a> 
+          <li class="nav-item ml-2 mr-2" ng-class="{ active: panel.isSelected(2)}"> 
+            <a class="nav-link active" href ng-click="panel.selectTab(2)">Specifications</a> 
           </li>
-          <li class="nav-item" ng-class="{ active:tab === 3}">
-           <a class="nav-link active" href ng-click="tab = 3">Reviews</a> 
+          <li class="nav-item" ng-class="{ active: panel.isSelected(3)}">
+           <a class="nav-link active" href ng-click="panel.selectTab(3)">Reviews</a> 
           </li>
         </ul>
       <!--Panels for tabs -->
-      <div class="card" ng-show="tab === 1">
+      <div class="card" ng-show="panel.isSelected(1)">
         <h4 class="card-header">Description</h4>
-        <p class="card-body">{{product.description}}</p>
+        <blockquote class="card-body blockquote">{{product.description}}</blockquote>
       </div>
-      <div class="card" ng-show="tab === 2">
+      <div class="card" ng-show="panel.isSelected(2)">
         <h4 class="card-header">Specifications</h4>
         <blockquote class="card-body blockquote">Not yet</blockquote>
       </div>
-      <div class="card" ng-show="tab === 3">
+      <div class="card" ng-show="panel.isSelected(3)">
         <h4 class="card-header">Reviews</h4>
         <blockquote class="card-body blockquote">Not yet</blockquote>
       </div>
