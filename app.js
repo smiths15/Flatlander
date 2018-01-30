@@ -19,7 +19,6 @@
   });
 
   // Image Gallery controller//
-
   app.controller('GalleryController', function(){
     this.current = 0;
 
@@ -32,6 +31,16 @@
     };
 
   });
+  //Review Controller//
+  app.controller('ReviewController',function(){
+    this.review = {};
+
+    this.addReview = function(product){
+      product.reviews.push(this.review);
+      this.review = {};
+    };
+  });
+
 
   var gems = [
 
