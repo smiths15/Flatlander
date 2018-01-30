@@ -47,7 +47,19 @@
         {
           full: 'images/gem3.gif',
         }
-      ]
+      ],
+      reviews: [
+        {
+          stars: 5,
+          body: "I love this product",
+          author: "joe@thomas.com",
+        },
+        {
+          stars: 1,
+          body: "I hate this product",
+          author: "tim@hater.com",
+        }
+      ],
     },
 
     {
@@ -62,7 +74,19 @@
         {
           full: 'images/gem4.gif'
         }
-      ]
+      ],
+      reviews: [
+        {
+          stars: 3,
+          body: "I like this product",
+          author: "joe@thomas.com",
+        },
+        {
+          stars: 2,
+          body: "I don't like this product",
+          author: "joe@thomas.com",
+        }
+      ],
     },
 
   ];
