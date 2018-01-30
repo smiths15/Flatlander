@@ -10,11 +10,14 @@
     {
       name: 'Dodecahedron',
       price: 2.95,
-      description: '...',
+      description: 'Origin of the Dodecahedron is unknown, hence its low value.',
       canPurchase: true,
       images: [
         {
           full: 'images/gem1.gif',
+        },
+        {
+          full: 'images/gem3.gif',
         }
       ]
     },
@@ -22,11 +25,14 @@
     {
       name: 'Pentagonal Gem',
       price: 5.95,
-      description: '...',
+      description: 'Origin of the Pentagonal is unknown, hence its low value.',
       canPurchase: true,
       images: [
         {
           full: 'images/gem2.gif'
+        },
+        {
+          full: 'images/gem4.gif'
         }
       ]
     },
