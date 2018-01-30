@@ -23,11 +23,11 @@
   </header>
   
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products">
+    <li class="list-group-item" ng-repeat="product in store.products" ng-controller="GalleryController as gallery">
       <h3>{{product.name}}</h1>
       <em class="float-right">{{product.price | currency}}</em>
       
-      <img ng-src="{{product.images[0].full}}"/>
+      <img ng-src="{{product.images[gallery.current].full}}"/>
       <ul class="clearfix" style="list-style: none;">
         <li class="float-left" ng-repeat="image in product.images">
           <img ng-src="{{image.full}}">

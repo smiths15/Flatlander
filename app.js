@@ -5,7 +5,7 @@
     this.products = gems;
   });
 
-//controller for panel//
+//Panel controller//
   app.controller('PanelController', function(){
     this.tab = 1;
 
@@ -16,6 +16,21 @@
     this.isSelected = function(checkTab){
       return this.tab === checkTab;
     };
+  });
+
+  // Image Gallery controller//
+
+  app.controller('GalleryController', function(){
+    this.current = 0;
+
+    this.setCurrent = function(value){
+      if(!value){
+        this.current = 0;
+      }else{
+        this.current = value;
+      };
+    };
+
   });
 
   var gems = [
