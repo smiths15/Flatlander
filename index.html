@@ -33,7 +33,7 @@
           <img ng-src="{{image.full}}">
         </li>
       </ul>
-    <!--Tabs -->
+    <!--Tabs and directives-->
       <section ng-controller="PanelController as panel">
         <ul class="nav nav-pills mb-4 mt-4">
           <li class="nav-item " ng-class="{ active: panel.isSelected(1)}"> 
@@ -63,7 +63,7 @@
     
 
 
-      <button ng-show="{{product.canPurchase}}">Add to Cart</button>
+      <button class="mt-4" ng-show="{{product.canPurchase}}">Add to Cart</button>
     </li>
   </ul>
 </body>
