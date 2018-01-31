@@ -1,0 +1,14 @@
+input[name="author"] {
+  border-color:#FA787E;
+}
+
+select[name="review"] {
+  border-color:#FA787E;
+}
+
+textarea[name="comments"] {
+  border-color:#FA787E;
+}
+.ng-valid.ng-dirty {
+  border-color:#78FA89;
+}
