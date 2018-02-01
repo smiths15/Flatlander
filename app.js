@@ -4,30 +4,6 @@
   app.controller('StoreController', function(){
     this.products = gems;
   });
-
-  // Image Gallery controller//
-  app.controller('GalleryController', function(){
-    this.current = 0;
-
-    this.setCurrent = function(value){
-      if(!value){
-        this.current = 0;
-      }else{
-        this.current = value;
-      };
-    };
-
-  });
-  //Review Controller//
-  app.controller('ReviewController',function(){
-    this.review = {};
-
-    this.addReview = function(product){
-      product.reviews.push(this.review);
-      this.review = {};
-    };
-  });
-
   //Element Directive for Product Title//
   app.directive("productTitle", function(){
     return {
@@ -35,7 +11,7 @@
       templateUrl: "product-title.html"
     };
   });
-  //Element Directive for Product Panel and Panel Controller//
+  //Element Directive for Product Panel//
   app.directive("productPanel", function(){
     return {
       restrict: "E",
@@ -52,6 +28,47 @@
         };
       },
       controllerAs: 'panel'
+    };
+  });
+  //Product Tabs Directive//
+  app.directive('productTabs', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'product-tabs.html'
+    };
+  });
+  //Product Reviews Directive//
+  app.directive('productReviews', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'product-reviews.html',
+      controller: function(){
+        this.review = {};
+
+        this.addReview = function(product){
+        product.reviews.push(this.review);
+        this.review = {};
+        };
+      },
+      controllerAs: 'reviewCtrl'
+    };
+  });
+  //Product Gallery Directive//
+  app.directive('productGallery', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'product-gallery.html',
+      controller: function(){
+        this.current = 0;
+        this.setCurrent = function(value){
+          if(!value){
+            this.current = 0;
+          }else{
+            this.current = value;
+          };
+        };
+      },
+      controllerAs: 'gallery',
     };
   });
 

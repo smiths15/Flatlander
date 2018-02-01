@@ -23,29 +23,9 @@
   <header style="text-align: center;">
   <h1>Flatlander Crafted Gems</h1>
   <h2> &mdash; an Angular store &mdash;</h2>  
-  </header>
-  
+  </header>  
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products" ng-controller="GalleryController as gallery">
-      
-      <!--Product Description Directive -->
-     <h3><product-title></product-title></h3>
-
-      
-      <img ng-src="{{product.images[gallery.current].full}}"/>
-      <ul class="m-4 clearfix" style="list-style: none;">
-        <li class="float-left" ng-repeat="image in product.images">
-          <img ng-src="{{image.full}}">
-        </li>
-      </ul>
-
-      <!--Tabs and directives-->
-      <product-panel></product-panel>
-    
-
-
-      <button class="mt-4" ng-show="{{product.canPurchase}}">Add to Cart</button>
-    </li>
+    <product-gallery></product-gallery>
   </ul>
 </body>
 </html>
