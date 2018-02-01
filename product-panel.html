@@ -1,0 +1,62 @@
+<!--Tabs and directives-->
+      <section>
+        <ul class="nav nav-pills mb-4 mt-4">
+          <li class="nav-item " ng-class="{ active: panel.isSelected(1)}"> 
+            <a  class="nav-link active" href ng-click="panel.selectTab(1)">Description</a> 
+          </li>
+          <li class="nav-item ml-2 mr-2" ng-class="{ active: panel.isSelected(2)}"> 
+            <a class="nav-link active" href ng-click="panel.selectTab(2)">Specifications</a> 
+          </li>
+          <li class="nav-item" ng-class="{ active: panel.isSelected(3)}">
+           <a class="nav-link active" href ng-click="panel.selectTab(3)">Reviews</a> 
+          </li>
+        </ul>
+      <!--Panels for tabs -->
+      <div class="card" ng-show="panel.isSelected(1)">
+        <h4 class="card-header">Description</h4>
+        <blockquote class="card-body blockquote">{{product.description}}</blockquote>
+      </div>
+      <div class="card" ng-show="panel.isSelected(2)">
+        <h4 class="card-header">Specifications</h4>
+        <blockquote class="card-body blockquote">Not yet</blockquote>
+      </div>
+      <div class="card" ng-show="panel.isSelected(3)">
+        <h4 class="card-header">Reviews</h4>
+        <!-- Reviews -->
+        <blockquote class="card-body blockquote" ng-repeat="review in product.reviews">
+          <b>Stars: {{review.stars}}</b>
+          {{review.body}}
+          <cite>by: {{review.author}}</cite>
+        </blockquote>
+
+        <!-- Review Form -->
+        <form name="reviewForm" class="p-4" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+          <blockquote class="card-body blockquote">
+            <b>Stars: {{reviewCtrl.review.stars}}</b>
+            {{reviewCtrl.review.body}}
+            <cite>by: {{reviewCtrl.review.author}}</cite>
+          </blockquote>
+          <h4>Submit a Review</h4>
+          <div class="form-group">
+            <select class="form-control" name="review" ng-model="reviewCtrl.review.stars" required>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 star</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+              . . .
+            </select>  
+          </div>
+          
+          <div class="form-group">
+            <label>Comments</label>
+            <textarea name="comments" class="form-control" ng-model="reviewCtrl.review.body" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>by:</label>
+            <input name="author" class="form-control" type="email" placeholder="name@email.com" ng-model="reviewCtrl.review.author" required />
+          </div>
+          <input type="submit" value="Submit" />  
+        </form>
+      </div>
+      </section>
